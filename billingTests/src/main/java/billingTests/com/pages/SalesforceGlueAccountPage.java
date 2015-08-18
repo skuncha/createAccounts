@@ -22,7 +22,7 @@ import org.openqa.selenium.support.ui.Select;
  * @see CreateDirectOrders
  */
 public class SalesforceGlueAccountPage  extends PageObject {
-	int i=0;
+//	int i=0;
 	int j=1;
 	int synctimeforSOPID = 5;
 	String ref, financeID,clientURL;
@@ -230,7 +230,7 @@ public class SalesforceGlueAccountPage  extends PageObject {
 															synctimeforSOPID = synctimeforSOPID + 20;
 														}
 													financeID = id;
-													System.out.print("Account Name : "+arraylist.get(i) +  " +  SOPID : " +financeID + " + ");
+													System.out.print("Account Name : "+arraylist.get(0) +  " +  SOPID : " +financeID + " + ");
 													getDriver().navigate().back();
 													waitFor(6).seconds();
 													newRelationship.click(); 
@@ -305,7 +305,7 @@ public class SalesforceGlueAccountPage  extends PageObject {
 													}
 										 financeID = id;
 //										 ref =CCIMailCustomerID().getText();
-										System.out.print("Account Name : "+arraylist.get(i) +  " +  SOPID : " +financeID + " + ");
+										System.out.print("Account Name : "+arraylist.get(0) +  " +  SOPID : " +financeID + " + ");
 										getDriver().navigate().back(); 
 									}
 									else {
@@ -360,17 +360,18 @@ public class SalesforceGlueAccountPage  extends PageObject {
 					   	{
 				    		selectBillingRef().click();
 				    		waitFor(1).seconds();
-				    		i++;
+//				    		i++;
 				    	}
 						   	else 
 						   	{
-						   		String endUseraccount = arraylist.get(i);
+						   		String endUseraccount = arraylist.get(0);
 								accountType().selectByVisibleText(endUseraccount);
 								waitFor(1).seconds();
-								i++;
+//								i++;
 						   	}
 						contactNext().click();
 						waitFor(4).seconds();
+						arraylist.clear();
 //						accountCreation();
 						waitFor(1).seconds();
 						/*finish().click();
@@ -380,7 +381,8 @@ public class SalesforceGlueAccountPage  extends PageObject {
 				catch (Exception e1)
 				{
 					System.out.println("    ---> Sorry latency issue can't create this account ");
-					i++;
+//					i++;
+					arraylist.clear();
 				} 
 				accountCreation();
 			}
