@@ -112,10 +112,11 @@ public class SalesforceGlueAccountPage  extends PageObject {
     	waitFor(8).second();
     	searchCustomerName().type(keyword);
     	customerSearchButton.click();
+    	waitFor(5).second();
     }
     
     public void newAccountButtonFromSearchResultsSection() {
-    	waitFor(5).second();
+    	waitFor(1).second();
     	newAccountButtonChild().click();
     }
     
