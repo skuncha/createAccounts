@@ -47,7 +47,6 @@ public class SalesforceGlueAccountPage  extends PageObject {
 	private WebElementFacade saveIndCate()        { return element(By.name("j_id0:j_id1:j_id27:j_id28:j_id29"));		}
 	private WebElementFacade newAccountButtonChild() { return element(By.cssSelector("input[value='New Account']"));	}
 	private WebElementFacade continueButt()          { return element(By.cssSelector("input[value='Continue']")); 		}
-	private WebElementFacade type() 				{ return element(By.xpath("//div[@id='ep']/div[2]/div[3]/table/tbody/tr/td[4]/div/span/select/option[2]"));  }
 	private WebElementFacade searchCustomerName() 	{ return element(By.xpath("//td[contains(label,'Customer Name or Aliases')]/input"));		}
 	private WebElementFacade createDirectOrder() 	{ return element(By.cssSelector("input[value='Create Direct Order']"));						}
 	private WebElementFacade billingSelection() 	{ return element(By.id("j_id0:j_id1:i:f:pb:d:Billing_Selection.input"));					}
@@ -130,7 +129,7 @@ public class SalesforceGlueAccountPage  extends PageObject {
     }
     
     public void accountCreation(){
-    		waitFor(6).seconds();
+    		waitFor(3).seconds();
     		accounts.click();
     		waitFor(5).seconds();
 			searchCustomerName().type("xyz");
@@ -145,12 +144,12 @@ public class SalesforceGlueAccountPage  extends PageObject {
     	CCICustomerMail().click();
     	waitFor(2).seconds();
 		getDriver().switchTo().alert().accept();  
-		waitFor(16).seconds();
+		waitFor(12).seconds();
 		getDriver().switchTo().alert().accept(); 
 		waitFor(5).seconds();
     }
     
-/**************************************************************CSVFile
+/**************************************************************CSVFile 
  * @throws IOException *****************************************************/
     public void read_input(String fileLoc) throws IOException {
     	System.out.println("\n");
@@ -165,7 +164,6 @@ public class SalesforceGlueAccountPage  extends PageObject {
 				    continueButt().click();
 				    long timeNow = System.currentTimeMillis();
 /************** Supply User Account details ********************************/  
-				  
 				    waitFor(5).seconds();
 				    String str = record.get("accountType");
 				    selectTypeOfAccount().selectByVisibleText(record.get("accountType"));
@@ -310,6 +308,7 @@ public class SalesforceGlueAccountPage  extends PageObject {
 									}
 									else {
 										CCIMailIntegration();
+										Thucydides.takeScreenshot();
 									}
 						waitFor(5).seconds();
 						createDirectOrder().click();
