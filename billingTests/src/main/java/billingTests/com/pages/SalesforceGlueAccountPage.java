@@ -145,7 +145,7 @@ public class SalesforceGlueAccountPage  extends PageObject {
     	CCICustomerMail().click();
     	waitFor(2).seconds();
 		getDriver().switchTo().alert().accept();  
-		waitFor(12).seconds();
+		waitFor(15).seconds();
 		getDriver().switchTo().alert().accept(); 
 		waitFor(5).seconds();
     }
@@ -245,11 +245,11 @@ public class SalesforceGlueAccountPage  extends PageObject {
 							    	getDriver().switchTo().frame("066D0000000kh27");
 							    	WebElement editable = getDriver().switchTo().activeElement();
 							    	editable.findElement(By.cssSelector("input[name='j_id0:j_id1:j_id27:j_id28:j_id31']")).click();
-							    	waitFor(4).seconds();
+							    	waitFor(3).seconds();
 						    	   	mainCate().selectByVisibleText(record.get("mainCategory"));
-						    	   	waitFor(5).seconds();
+						    	   	waitFor(4).seconds();
 							 	    subCate().selectByVisibleText(record.get("subCategory"));
-							 	    waitFor(5).seconds();
+							 	    waitFor(4).seconds();
 							 	    minorCate().selectByVisibleText(record.get("minorCategory"));
 							 	    waitFor(3).seconds();
 							 	    saveIndCate().sendKeys(Keys.RETURN);
