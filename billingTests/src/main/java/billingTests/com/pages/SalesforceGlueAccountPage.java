@@ -142,13 +142,14 @@ public class SalesforceGlueAccountPage  extends PageObject {
     
     public void CCIMailIntegration(){
     	
+    	Thucydides.takeScreenshot();
     	CCICustomerMail().click();
-    	waitFor(2).seconds();
+    	waitFor(4).seconds();
 		getDriver().switchTo().alert().accept();  
 		waitFor(15).seconds();
 		getDriver().switchTo().alert().accept(); 
 		waitFor(5).seconds();
-		Thucydides.takeScreenshot();
+		
     }
     
 /**************************************************************CSVFile 
