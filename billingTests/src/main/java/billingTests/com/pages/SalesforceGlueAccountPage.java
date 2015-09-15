@@ -142,7 +142,6 @@ public class SalesforceGlueAccountPage  extends PageObject {
     
     public void CCIMailIntegration(){
     	
-    	Thucydides.takeScreenshot();
     	CCICustomerMail().click();
     	waitFor(4).seconds();
 		getDriver().switchTo().alert().accept();  
@@ -311,9 +310,9 @@ public class SalesforceGlueAccountPage  extends PageObject {
 									}
 									else {
 										CCIMailIntegration();
-										Thucydides.takeScreenshot();
 									}
 						waitFor(5).seconds();
+						Thucydides.takeScreenshot();
 						createDirectOrder().click();
 /**************  Select Order Type *************************************************************/
 				    	
