@@ -148,6 +148,7 @@ public class SalesforceGlueAccountPage  extends PageObject {
 		waitFor(15).seconds();
 		getDriver().switchTo().alert().accept(); 
 		waitFor(5).seconds();
+		Thucydides.takeScreenshot();
     }
     
 /**************************************************************CSVFile 
@@ -188,9 +189,9 @@ public class SalesforceGlueAccountPage  extends PageObject {
 					    		waitABit(1000);
 								saveButton.click();
 								waitFor(8).seconds();
+								Thucydides.takeScreenshot();
 								String Name = readAccountName().getText();
 						    	arraylist.add(Name);
-						    	Thucydides.takeScreenshot();
 						    	clientURL = getDriver().getCurrentUrl();
 						    	customerUniqueID = clientURL.split("com/");
 						    	System.out.print(" " +j++ + ". " + "Unique ID : " +customerUniqueID[1] + "  +  ");
