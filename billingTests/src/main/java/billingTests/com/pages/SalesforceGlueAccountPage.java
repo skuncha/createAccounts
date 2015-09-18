@@ -51,6 +51,7 @@ public class SalesforceGlueAccountPage  extends PageObject {
 	private WebElementFacade createDirectOrder() 	{ return element(By.cssSelector("input[value='Create Direct Order']"));						}
 	private WebElementFacade billingSelection() 	{ return element(By.id("j_id0:j_id1:i:f:pb:d:Billing_Selection.input"));					}
 	private WebElementFacade billingOption() 	    { return element(By.id("j_id0:j_id1:i:f:pb:d:Billing_Options.input"));						}
+	private WebElementFacade billingOption1() 	    { return element(By.id("j_id0:j_id1:i:f:pb:d:Billing_Options_0.input"));					}
 	private WebElementFacade billingSelectionNext() { return element(By.id("j_id0:j_id1:i:f:pb:pbb:bottom:next"));								}
 	private WebElementFacade finish() 				{ return element(By.cssSelector("input[value='Finish']"));									}
 	private WebElementFacade CCICustomerMail()      { return element(By.cssSelector("input[value='Create CCI Customer-Mail']"));				}
@@ -343,8 +344,12 @@ public class SalesforceGlueAccountPage  extends PageObject {
 				    	}	
 					if (str.equalsIgnoreCase("Brand"))
 					{
+						try{
 						waitFor(3).seconds();
 			    		billingOption().selectByVisibleText("Direct");
+						} catch (Exception noSuchelement) {
+						billingOption1().selectByVisibleText("Direct");
+						}
 			    		billingSelectionNext().click(); 
 			    	}
 /**************  Create Contact ******************************************************************/
