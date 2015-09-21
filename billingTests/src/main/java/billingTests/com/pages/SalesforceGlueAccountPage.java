@@ -131,7 +131,7 @@ public class SalesforceGlueAccountPage  extends PageObject {
     }
     
     public void accountCreation(){
-    		waitFor(3).seconds();
+    		waitFor(1).seconds();
     		accounts.click();
     		waitFor(5).seconds();
 			searchCustomerName().type("xyz");
@@ -273,7 +273,7 @@ public class SalesforceGlueAccountPage  extends PageObject {
 									{
 										
 										 CCIMailIntegration(); // CCIMail Integration
-										 waitFor(8).seconds();
+										 waitFor(3).seconds();
 										 accountMapping(); /**************  Account Mapping  *******************************************/
 										 
 												if (str.equalsIgnoreCase("Private Advertiser")){
@@ -289,7 +289,7 @@ public class SalesforceGlueAccountPage  extends PageObject {
 //														FFfinanceAccount.click(); 
 													}	
 												
-												waitFor(5).seconds();
+												waitFor(4).seconds();
 												String id = SOPID().getText();
 //												String id = FFSOPID().getText();
 												while(id.equals(" ")) 
@@ -376,7 +376,7 @@ public class SalesforceGlueAccountPage  extends PageObject {
 //								i++;
 						   	}
 						contactNext().click();
-						waitFor(4).seconds();
+						waitFor(2).seconds();
 						arraylist.clear();
 //						accountCreation();
 						waitFor(1).seconds();

@@ -39,7 +39,6 @@ public class EndUserSteps extends ScenarioSteps {
     	
     	SalesforceGlueAccountPage accountPage = getPages().get(SalesforceGlueAccountPage.class);
 		homePage.AccountsTab();
-		waitABit(4000);
 //		accountPage.newAccount();
     }
     
