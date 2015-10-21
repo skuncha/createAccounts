@@ -149,7 +149,6 @@ public class SalesforceGlueAccountPage  extends PageObject {
 		waitFor(15).seconds();
 		getDriver().switchTo().alert().accept(); 
 		waitFor(5).seconds();
-		
     }
     
 /**************************************************************CSVFile 

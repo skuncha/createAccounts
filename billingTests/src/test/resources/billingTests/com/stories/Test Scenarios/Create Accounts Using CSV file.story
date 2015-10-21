@@ -1,13 +1,11 @@
-!-- Objective : As a sales rep i should be able to login to glue and create Billing Agency Account 
-!-- srinivasa.kuncha@mailnewspapers.co.uk.prodmirror 
-!-- srinivasa.kuncha@mailnewspapers.co.uk.fcuat  amma1234
+!-- Objective : As a Sales Rep I should be able to login to glue, create Advertiser/Agency Accounts and sync with CCI 
 
 Narrative:
-In order to Create Agency Accounts using CSV file
+In order to Create Customer accounts using CSV file
 As a Sales Representative
 I want to login to SalesforceGlue and create Accounts
 
-Scenario: Sales reprasentative will be able to create accounts using CSV file
+Scenario: Sales reprasentative will be able to create customer accounts using CSV file
 
 Meta:
 @author Srinivasa Kuncha
